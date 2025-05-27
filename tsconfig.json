@@ -2,15 +2,15 @@
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
-    "rootDir": "src",
-    "outDir": "dist",
-    "strict": true,
+    "rootDir": "./",
+    "outDir": "./dist",
     "esModuleInterop": true,
+    "strict": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["app.ts", "src/**/*"]
 }
 
