@@ -1,10 +1,10 @@
 // Importação da biblioteca express
 import express from "express";
 import cors from "cors";
-import usuarioRoutes from "./src/routes/usuario.routes";
-import avaliacaoRoutes from "./src/routes/avaliacao.routes";
-import veiculoRoutes from "./src/routes/veiculo.routes";
-import viagemRoutes from "./src/routes/viagem.routes";
+import usuarioRoutes from "../src/routes/usuario.routes";
+import avaliacaoRoutes from "../src/routes/avaliacao.routes";
+import veiculoRoutes from "../src/routes/veiculo.routes";
+import viagemRoutes from "../src/routes/viagem.routes";
 
 // Criação da aplicação
 const app = express();
