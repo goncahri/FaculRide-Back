@@ -1,9 +1,6 @@
 # Dependências
 node_modules/
 
-# Arquivos gerados pelo TypeScript
-dist/
-
 # Variáveis de ambiente
 .env
 
