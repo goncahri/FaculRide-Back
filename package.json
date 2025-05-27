@@ -1,0 +1,36 @@
+{
+  "name": "faculride",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "dev": "ts-node-dev --respawn --transpile-only ./app.ts",
+  "build": "tsc",
+  "start": "node api/index.js",
+  "migration:create": "npx sequelize-cli migration:generate --name",
+  "migrate": "npx sequelize-cli db:migrate",
+  "revert": "npx sequelize-cli db:migrate:undo"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pg": "^8.16.0",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "@types/sequelize": "^4.28.20",
+    "sequelize-cli": "^6.6.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "type": "commonjs"
+}

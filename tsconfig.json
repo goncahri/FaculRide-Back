@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2019",                          // Versão moderna e segura do JS
+    "module": "commonjs",                        // Compatível com Node.js e Vercel
+    "outDir": "./dist",                          // Para onde os arquivos .js vão no build
+    "rootDir": "./",                             // Base de todos os arquivos .ts
+    "strict": true,                              // Ativa verificação rigorosa
+    "esModuleInterop": true,                     // Permite importações modernas
+    "moduleResolution": "node",                  // Resolve módulos como o Node faz
+    "resolveJsonModule": true,                   // Permite importar arquivos .json
+    "forceConsistentCasingInFileNames": true,    // Evita problemas de maiúsculas/minúsculas
+    "skipLibCheck": true                         // Ignora verificação de .d.ts de libs
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

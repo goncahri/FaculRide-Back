@@ -1,0 +1,14 @@
+# Dependências
+node_modules/
+
+# Arquivos gerados pelo TypeScript
+dist/
+
+# Variáveis de ambiente
+.env
+
+# Configuração com dados sensíveis (caso ainda exista)
+config/config.json
+
+# Logs e arquivos temporários
+*.log
