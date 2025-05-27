@@ -2,19 +2,20 @@
   "name": "faculride",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "dev": "ts-node-dev --respawn --transpile-only ./app.ts",
-  "build": "tsc",
-  "start": "node api/index.js",
-  "migration:create": "npx sequelize-cli migration:generate --name",
-  "migrate": "npx sequelize-cli db:migrate",
-  "revert": "npx sequelize-cli db:migrate:undo"
-},
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only ./app.ts",
+    "build": "tsc",
+    "start": "node api/index.js",
+    "migration:create": "npx sequelize-cli migration:generate --name",
+    "migrate": "npx sequelize-cli db:migrate",
+    "revert": "npx sequelize-cli db:migrate:undo"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@vercel/node": "^5.1.16",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "pg": "^8.16.0",
