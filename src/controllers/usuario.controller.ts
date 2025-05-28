@@ -1,8 +1,14 @@
 import { Request, Response } from "express";
 import { UsuarioModel } from "../models/usuario.model";
-import { Iusuario, IRetornoCadastroUsuario, IusuarioFiltros } from "../interfaces/Iusuario";
+import { VeiculoModel } from "../models/veiculo.model";
+import {
+  Iusuario,
+  IRetornoCadastroUsuario,
+  IusuarioFiltros
+} from "../interfaces/Iusuario";
+import { IVeiculo } from "../interfaces/Iveiculo";
 
-// Cadastro com validação condicional de CNH
+// Cadastro com validação condicional de CNH e criação de veículo
 export const cadastrarUsuario = async (usuario: Iusuario): Promise<IRetornoCadastroUsuario> => {
   const tiposPermitidos = ["passageiro", "motorista"];
 
@@ -15,6 +21,16 @@ export const cadastrarUsuario = async (usuario: Iusuario): Promise<IRetornoCadas
   }
 
   const novoUsuario = await UsuarioModel.create(usuario);
+
+  // Criação do veículo caso seja motorista e os dados venham
+  const veiculo = (usuario as any).veiculo as IVeiculo;
+  if (usuario.tipoUsuario === "motorista" && veiculo) {
+    await VeiculoModel.create({
+      ...veiculo,
+      idUsuario: novoUsuario.idUsuario
+    });
+  }
+
   return { id: novoUsuario.idUsuario };
 };
 
@@ -24,7 +40,7 @@ export const filtrarUsuarios = async (filtros: IusuarioFiltros): Promise<Iusuari
     where: {
       ...(filtros.nome && { nome: filtros.nome }),
       ...(filtros.email && { email: filtros.email }),
-      ...(filtros.tipoUsuario && { tipoUsuario: filtros.tipoUsuario }),
+      ...(filtros.tipoUsuario && { tipoUsuario: filtros.tipoUsuario })
     }
   });
   return usuarios;
@@ -45,7 +61,7 @@ export const loginUsuario = async (req: Request, res: Response) => {
       return res.status(401).json({ erro: "E-mail ou senha inválidos" });
     }
 
-    // Retorna dados básicos (pode incluir mais conforme necessidade)
+    // Retorna dados básicos
     return res.status(200).json({
       id: usuario.idUsuario,
       nome: usuario.nome,

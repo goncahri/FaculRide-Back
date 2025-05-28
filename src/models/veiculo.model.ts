@@ -22,7 +22,7 @@ VeiculoModel.init({
     field: "ID_veiculo"
   },
   Placa_veiculo: {
-    type: DataTypes.STRING(6),
+    type: DataTypes.STRING(8),
     allowNull: true,
     field: "Placa_veiculo"
   },
@@ -48,6 +48,6 @@ VeiculoModel.init({
   }
 }, {
   sequelize,
-  tableName: "Veiculo",
+  tableName: "veiculo",
   timestamps: false
 });

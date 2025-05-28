@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true
       },
       Placa_veiculo: {
-        type: Sequelize.STRING(6),
+        type: Sequelize.STRING(8),
         allowNull: false
       },
       Cor: {
