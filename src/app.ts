@@ -16,5 +16,5 @@ app.use("/api/avaliacao", avaliacaoRoutes);
 app.use("/api/veiculo", veiculoRoutes);
 app.use("/api/viagem", viagemRoutes);
 
-// Exporta para uso pelo Vercel (sem app.listen)
+// Exporta para uso pelo Vercel ou Render
 export default app;
