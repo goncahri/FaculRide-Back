@@ -2,19 +2,17 @@ import express from "express";
 import cors from "cors";
 
 import usuarioRoutes from "./routes/usuario.routes";
-import avaliacaoRoutes from "./routes/avaliacao.routes";
-import veiculoRoutes from "./routes/veiculo.routes";
-import viagemRoutes from "./routes/viagem.routes";
+// outras rotas...
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/usuario", usuarioRoutes);
-app.use("/api/avaliacao", avaliacaoRoutes);
-app.use("/api/veiculo", veiculoRoutes);
-app.use("/api/viagem", viagemRoutes);
+// outras rotas...
 
-// Exporta para uso pelo Vercel ou Render
-export default app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+

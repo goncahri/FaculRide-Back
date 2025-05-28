@@ -9,6 +9,3 @@ config/config.json
 
 # Logs e arquivos temporários
 *.log
-
-# Pasta de build TypeScript
-dist/
